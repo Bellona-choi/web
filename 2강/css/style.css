@@ -1,0 +1,51 @@
+body{
+    background-color: black;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+div{
+    width: 200px;
+    background-color: beige;
+    font-size: 30px;
+}
+p{
+    color: blanchedalmond;
+    background-color: black;
+}
+
+/*red-text라는 함수 선언  */
+.red-text{
+    color: brown;
+    background-color: rgb(197, 197, 40);
+}
+
+
+/*yellow-text라는 함수 선언  */
+.yellow-text{
+    color: chartreuse;
+    background-color: rgb(245, 220, 234);
+}
+
+/*big-size라는 함수 선언  */
+.big-size{
+    font-size: 50px;
+}
+
+/*boder라는 함수 선언  */
+.boder{
+    border: 10px;
+}
+
+/* id셀렉터 */
+#div1{
+    background-color: blueviolet;
+}
+
+a{
+    text-decoration: none;
+    color: gray;
+}
+/* 글자 위에 마우스를 올리면 생상변환 */
+a:hover{
+    color: aliceblue;
+}
