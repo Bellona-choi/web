@@ -29,6 +29,9 @@ p{
 /*big-size라는 함수 선언  */
 .big-size{
     font-size: 50px;
+    font-family: 'Courier New', Courier, monospace;
+    font-style: initial;
+    
 }
 
 /*boder라는 함수 선언  */
