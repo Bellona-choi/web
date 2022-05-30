@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>display</title>
+</head>
+<body>
+    <!-- style -->
+    <style>
+        span{
+            /* block = 가로로 꽉차게 해준다 */
+            display: block;
+        }
+        /* div1{  */
+            /* inline 자기자신 크기를 가지고 있다 */
+            /* display: inline; */
+        /* } */
+        div.div1{
+            /* magin= 외부여백 */
+            /* padding= 내부 여백 */
+            margin: 50px;
+            padding:30px;
+            display: inline-block;
+            width: 300px;
+            height: 50px;
+            background-color: yellow;
+            
+        }
+        div.div2{
+            /* inline 은 width나 height를 사용할수 없다 고정이라서 */
+            display: inline;
+            /* relative=  원래 위치 기준*/
+            /* absolute= 가장 가까운 position 속성이 static이 아닌 tag기준(이 없다면 화면 기준)*/
+            /* static= 문서 흐름에 따라 배치*/
+            /* fixed=상태고정 스크롤을 이동해도 그자리 고정된다*/
+            position: fixed;
+            left: 30px;
+            top: 30px;
+            background-color: pink;
+        }
+        /* 한줄에 여러개를 사용시 display:inline-block */
+        /* 하나씩 사용하며 크기나 길이를 조절하려면 display:block */
+    </style>
+    <!-- 하면 바로 만들수 있다 div.div1 -->
+    <!-- .div 도 빠르게 만들수 있다 -->
+    <div class="div1">div1</div>
+    <!-- div2 -->
+    <div class="div2">div2</div>
+    <!-- span -->
+    <span>span</span>
+    <!-- span1 -->
+    <span>span1</span>
+    <!-- h1 -->
+    <h1>h1</h1>
+    <!-- h2 -->
+    <h2>h2</h2>
+    <!-- header -->
+    <!-- div랑 똑같다 -->
+    <header>header</header>
+    <!-- footer -->
+    <footer>footer</footer>
+</body>
+</html>
