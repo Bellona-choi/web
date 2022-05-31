@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- script.js와 연결 -->
+    <script src="script.js"></script>
+</head>
+<body>
+    <!-- script.js에 있는  greeting()함수 호출-->
+    <button onclick="greeting()">인사</button>
+    <script>
+        function myFunc(num){
+            console.log(num);
+        }
+        // var 보다 let을 많이 사용
+        // var은 재선언이 된다.
+        // const는 상수
+        const NUM = 10;
+        var i = 10;
+        
+        console.log(i);
+        // 형식선언 타입은 알아서 결정된다
+        let num = 1;
+        let text = '텍스트 선언';
+
+        //문자열 병합
+        let name = '최재원';
+        let age = 32;
+        let result = name + '는' + age + '살입니다';
+        result = `${name}는 ${age}살입니다.`;
+
+        console.log(result);
+        // for문 연습하기 1번
+        let items = [1,2,3,4];
+        for(var i = 0; i<items.length; i++){
+            console.log(items[i]);
+        }
+        //for문 연습하기 2번
+        for(let item in items){
+            console.log(item);
+        }
+
+        let person = {
+            name: '최재원',
+            age: 32
+        };
+        console.log(person);
+    </script>
+</body>
+</html>
