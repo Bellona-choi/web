@@ -9,11 +9,17 @@
 <body>
     <script>
         // prompt = input
-        let name = prompt("");
-        if (name==""){
-            alert('입력해주세요.')
+        let name = prompt("이름을 입력해주세요");
+        if (name === ""){
+            alert('이름을 입력해주세요.')
+            name = prompt("이름을 입력해주세요");
+            if (name === ""){
+                alert('이름을 입력해주세요.')
+            }else{
+            alert(name + "님 안녕하세요.")
+        }
         }else{
-            alert(name + "안녕하세요.")
+            alert(name + "님 안녕하세요.")
         }
     </script>
 </body>
