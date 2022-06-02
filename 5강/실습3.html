@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실습</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+    integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- 스타일 지정 -->
+    <style>
+    .setting {
+        background-color: gray;
+        color: white;
+        width: 100px;
+        height: 50px;
+        font-size: large;
+    }
+    </style>
+    <script>
+    // 버튼 만들기 : id, class, onclick 지정
+    document.write("<button id='html' class='setting' onclick='Html()'>html</button>&nbsp&nbsp");
+    document.write("<button id='css' class='setting' onclick='Css()'>css</button>&nbsp&nbsp");
+    document.write("<button id='js' class='setting' onclick='Js()'>javascript</button>");
+    
+    //DOM 객체에 접근
+    let $html = $('#html');
+    let $css = $('#css');
+    let $js = $('#js');
+
+    //html 버튼 함수
+    function Html() { 
+        $html.style.color = 'black';
+        $html.style.backgroundColor = 'white';
+        $css.style.color = 'white';
+        $css.style.backgroundColor = 'gray';
+        $js.style.color = 'white';
+        $js.style.backgroundColor = 'gray';
+        $Html.css('color',color);
+    }
+     //css 버튼 함수
+    function Css() { 
+        $css.style.color = 'black';
+        $css.style.backgroundColor = 'white';
+        $html.style.color = 'white';
+        $html.style.backgroundColor = 'gray';
+        $js.style.color = 'white';
+        $js.style.backgroundColor = 'gray';
+        $Css.css('color',color);
+    }
+    //js 버튼 함수
+    function Js() { 
+        $js.style.color = 'black';
+        $js.style.backgroundColor = 'white';
+        $html.style.color = 'white';
+        $html.style.backgroundColor = 'gray';
+        $css.style.color = 'white';
+        $css.style.backgroundColor = 'gray';
+        $Js.css('color',color);
+    }
+    </script>
+</body>
+</html>
