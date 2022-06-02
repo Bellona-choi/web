@@ -27,7 +27,7 @@ crossorigin="anonymous"></script>
 			//아이디가 숫자이거나 4자리보다 작다면
 			if(!(isNaN($('#id').val()))){
 				// 오류 문자열을 idHelper의 text를 셋팅
-				$('#idHelper').text('아이디가 공백입니다.');
+				
 				//아이디에 포커스
 				$('#id').focus();
 			}else{
@@ -59,6 +59,7 @@ crossorigin="anonymous"></script>
 		$('#signup').click(function(){
 			var gender = $('.gender:checked');
 			var hobby = $('.hobby:checked');
+			
 			//성별이 체크되었는지 확인 체크가 되어있다면 공백
 			if($('.gender:checked').length != 0){
 				$('#genderHelper').text('');
@@ -72,7 +73,7 @@ crossorigin="anonymous"></script>
 			//성별
 			if($('#id').val() == ''){
 				$('#id').focus();
-				$('#idHelper').text('비밀번호가 공백입니다.');
+				$('#idHelper').text('아이디가 공백입니다.');
       }else if($('#pw1').val() == ''){
 				$('#pw1').focus();
 				$('#pwHelper').text('비밀번호가 공백입니다.');
