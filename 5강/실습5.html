@@ -59,7 +59,7 @@
     </tr>
   </table>
   <div>
-    <input id="log_button" type="button" value="버튼">
+    <input id="log_button" type="button" value="로그">
   </div>
   <script>
     // 전체 체크하기
@@ -87,7 +87,11 @@
 
       // 체크 된 것만 골라라
       console.log($('input:checkbox[name=chk]:checked').length);
-
+      let chk_val=[];
+      $('input:checkbox[name=chk]').each(function(i,i){
+        chk_val.push(ival);
+      });
+      console.log(chk_val);
       // name이 chk 인 체크박스의 속성 checked 를 붙여라 (전체 선택)
       // $('input[name=chk]:checkbox').prop('checked', true);
 
