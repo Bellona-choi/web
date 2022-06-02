@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style>
+    table, tr, td {
+        border:1px solid #000000 ;
+        border-collapse:collapse;
+    }
+    table {
+        width:100%;
+    }
+</style>
+<script src="https://code.jquery.com/jquery-3.6.0.js"
+integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+crossorigin="anonymous"></script>
+<script>
+	// jQuery -> $로 씀 여러 프레임 워크를 사용할시 풀네임 사용권장
+	// 윈도우 로드를 하고 실행
+	$(document).ready(function(){
+    //시작하면 아이디에 포커스
+		$('#id').focus();
+		//아이디에서 커서가 이동할때
+    $('#id').blur(function(){
+			//아이디가 숫자이거나 4자리보다 작다면
+			if(!(isNaN($('#id').val()))){
+				// 오류 문자열을 idHelper의 text를 셋팅
+				$('#idHelper').text('아이디가 공백입니다.');
+				//아이디에 포커스
+				$('#id').focus();
+			}else{
+				//전부맞으면 오류문자열 초기화
+				$('#idHelper').text('');
+				$('#pw1').focus();
+			}
+		});
+		$('#pw1').focus();
+
+		//비밀번호 확인칸에서 커서가 이동했을때
+		$('#pw1').blur(function(){
+			//첫번째 입력한 pw와 두번째 입력한 pw가 맞는지 비교
+			// 비밀번호가 4자리 미만이면
+			if($('#pw1').val().length < 5){
+				$('#pwHelper').text('비밀번호는 5자이상');
+				$('#pw1').focus();
+			//전부 통과하면 
+			}else{
+				$('#pwHelper').text('');
+				$('#gender').focus();
+			}
+		});
+		
+
+		
+
+		//signup버튼이 눌렀을경우
+		$('#signup').click(function(){
+			var gender = $('.gender:checked');
+			var hobby = $('.hobby:checked');
+			//성별이 체크되었는지 확인 체크가 되어있다면 공백
+			if($('.gender:checked').length != 0){
+				$('#genderHelper').text('');
+				// 취미가 2개이상 체크되어있다면 오류메시지 공백
+				if($('.hobby:checked').length >= 2){
+					$('#hobbyHelper').text('');
+				}
+			}
+			
+			//전체검사
+			//성별
+			if($('#id').val() == ''){
+				$('#id').focus();
+				$('#idHelper').text('비밀번호가 공백입니다.');
+      }else if($('#pw1').val() == ''){
+				$('#pw1').focus();
+				$('#pwHelper').text('비밀번호가 공백입니다.');
+      }else if($('.gender:checked').length == 0){
+				$('#genderHelper').text('성별을 선택하세요');
+			//취미
+			}else if($('.hobby:checked').length < 3){
+				$('#hobbyHelper').text('취미는 3개이상 선택');
+			//아이디공백체크
+			}else if($('#id').val() == ''){
+				$('#id').focus();
+				$('#idHelper').text('아이디가 공백입니다.');
+			//비밀번호 공백체크
+			}else if($('#pw1').val() == ''){
+				$('#pw1').focus();
+				$('#pwHelper').text('비밀번호가 공백입니다.');
+			//나이 공백체크
+			}else if($('#age').val() == ''){
+				$('#age').focus();
+				$('#ageHelper').text('나이가 공백입니다.');
+			//이메일 공백체크
+			}else if($('#email').val() == ''){
+				$('#email').focus();
+				$('#emailHelper').text('이메일주소가 공백입니다.');
+			//이메일 뒷자리 공백체크
+			}else if($('#url').val() == ''){
+				$('#url').focus();
+				$('#emailHelper').text('이메일주소가 공백입니다.');
+			//메모체크
+			}else if($('#memo').val() == ''){
+				$('#memo').focus();
+				$('#memolHelper').text('메모가 공백입니다.');
+			//전부다 검사가 통과된다면 값을 post방식으로 result.jsp로 전달합니다.
+		}else{
+				$('#form1').submit();
+			}
+		});
+		
+	});
+
+
+</script>
+</head>
+<body>
+<form id="form1" action="result.jsp" method="post">
+    <fieldset>
+        <legend>회원가입</legend>
+        <table>
+            <tr>
+                <td>아이디</td>
+                <td>
+                  <input type="text" id="id" name="id">
+                  @
+                  <select id="url" name="url">
+                  <option value="">::선택::</option>
+                  <option value="naver.com">naver.com</option>
+                  <option value="daum.net">daum.net</option>
+                  <option value="nate.com">nate.com</option>
+                  </select>
+                  <span id="idHelper"></span>
+                </td>
+            </tr>
+            <tr>
+              <td>비밀번호</td>
+              <td>
+                  <input type="password" id="pw1" name="pw1"><br>
+                  <span id="pwHelper"></span>
+              </td>
+            </tr>
+            <tr>
+                <td>성별</td>
+                <td>
+                    <input class="gender" type="radio" id="man" value="male" name="gender">남
+                    <input class="gender" type="radio" id="girl" value="female" name="gender">여
+                    <span id="genderHelper"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>취미</td>
+                <td>
+                    <input type="checkbox" value="sport" class="hobby" name="hobby">운동
+                    <input type="checkbox" value="trip" class="hobby" name="hobby">여행
+                    <input type="checkbox" value="read" class="hobby" name="hobby">독서<br>
+                    <input type="checkbox" value="read" class="hobby" name="hobby">개발
+                    <input type="checkbox" value="read" class="hobby" name="hobby">게임
+                    <input type="checkbox" value="read" class="hobby" name="hobby">낙시
+                    <span id="hobbyHelper"></span>
+                </td>
+            </tr>
+            <tr>
+              <td colspan="2">
+                  <input type="reset" value="취소">
+                  <input type="button" id="signup" value="회원가입">
+              </td>
+          </tr>
+      </table>
+  </fieldset>
+</form>
+</body>
+</html>
