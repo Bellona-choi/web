@@ -1,127 +1,101 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
+
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://code.jquery.com/jquery-3.6.0.js"
-  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
-  crossorigin="anonymous"></script>
-  <title>Document</title>
-</head>
-<body>
+  <title>jQuery 기초9</title>
   <style>
-    table,th,tr,td{
-      border: 1px black solid;
-
+    .container {
+      text-align: center;
     }
-    table{
-      width: 600px;
+
+    table {
+      display: inline-block;
+    }
+
+    table,
+    tr,
+    th,
+    td {
+      border: 1px solid black;
+      border-spacing: 0;
     }
   </style>
-  <table>
-    <tr>
-      <th>
-        <input type="checkbox" name="all" id="all">확인
-      </th>
-      <th>제목</th>
-      <th>글쓴시간</th>
-    </tr>
-    <tr>
-      <td><input type="checkbox" name="chk"></td>
-      <td>1111</td>
-      <td>11:11:11</td>
-    </tr>
-    <tr>
-      <td><input type="checkbox" name="chk"></td>
-      <td>2222</td>
-      <td>11:11:11</td>
-    </tr>
-    <tr>
-      <td><input type="checkbox" name="chk"></td>
-      <td>3333</td>
-      <td>11:11:11</td>
-    </tr>
-    <tr>
-      <td><input type="checkbox" name="chk"></td>
-      <td>4444</td>
-      <td>11:11:11</td>
-    </tr>
-    <tr>
-      <td><input type="checkbox" name="chk"></td>
-      <td>5555</td>
-      <td>11:11:11</td>
-    </tr>
-    <tr>
-      <td><input type="checkbox" name="chk"></td>
-      <td>6666</td>
-      <td>11:11:11</td>
-    </tr>
-  </table>
-  <div>
-    <input id="log_button" type="button" value="로그">
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div class="container">
+    <table>
+      <tr>
+        <th><input type="checkbox" class="checkAll">확인</th>
+        <th>제목</th>
+        <th>글쓴시간</th>
+      </tr>
+      <tr>
+        <td><input type="checkbox" class="checkOne"></td>
+        <td class="title">1111</td>
+        <td class="wDate">11:11:00</td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" class="checkOne"></td>
+        <td class="title">2222</td>
+        <td class="wDate">11:12:00</td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" class="checkOne"></td>
+        <td class="title">3333</td>
+        <td class="wDate">11:13:00</td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" class="checkOne"></td>
+        <td class="title">4444</td>
+        <td class="wDate">11:14:00</td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" class="checkOne"></td>
+        <td class="title">5555</td>
+        <td class="wDate">11:15:00</td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" class="checkOne"></td>
+        <td class="title">6666</td>
+        <td class="wDate">11:16:00</td>
+      </tr>
+    </table>
+    <br>
+    <br>
+    <button class="btn">로그</button>
   </div>
+
   <script>
-    // 전체 체크하기
-    $(document).ready(function() {
-        $("#all").click(function() {
-          if($("#all").is(":checked")) $("input[name=chk]").prop("checked", true);
-          else $("input[name=chk]").prop("checked", false);
-        });
-
-        $("input[name=chk]").click(function() {
-          var total = $("input[name=chk]").length;
-          var checked = $("input[name=chk]:checked").length;
-
-          if(total != checked) $("#all").prop("checked", false);
-          else $("#all").prop("checked", true); 
-        });
+    $(function () {
+      // 전체 체크에 따른 단일 체크 제어
+      $('.checkAll').click(function () {
+        $('.checkOne').prop('checked', this.checked);
       });
-    // $('#log_button').val();  // value 값 읽기
-    // $('#log_button').val('어쩌구');  // value 에 값 쓰기
-    $(document).ready(function() {
-    $('#log_button').click(function () {
-      // input 태그 중에 checkbox 타입 중에 name 이 chk 인 것만 골라라
-      let $checkBoxes = $('input:checkbox[name=chk]');
-      console.log(`체크박스 수 : ${$checkBoxes.length}`);
 
-      // 체크 된 것만 골라라
-      console.log($('input:checkbox[name=chk]:checked').length);
-      let chk_val=[];
-      $('input:checkbox[name=chk]').each(function(i,i){
-        chk_val.push(ival);
-      });
-      console.log(chk_val);
-      // name이 chk 인 체크박스의 속성 checked 를 붙여라 (전체 선택)
-      // $('input[name=chk]:checkbox').prop('checked', true);
-
-      // 체크된 것이 있는지?
-      if ($('input:checkbox[name=chk]:checked').length > 0) {
-
-      }
-      });
-      // 내부 순환
-      let checkedSize = 0;
-      $('input[name=chk]:checkbox').each(function () {
-        console.log('!!!');
-        console.log(this);
-        // this.checked = true;
-        console.log($(this));
-        // $(this).prop('checked', true);
-
-        // 개별 체크
-        if ($(this).is(':checked')) {
-          checkedSize++;
-          console.log(checkedSize);
+      // 단일 체크에 따른 전체 체크 제어
+      $(".checkOne").click(function () {
+        if ($('.checkOne:checked').length === $('.checkOne').length) {
+          $('.checkAll').prop('checked', true);
+        } else {
+          $('.checkAll').prop('checked', false);
         }
       });
-    
-      // 위와 동일한 코드
-      // for (let i = 0; i < $('input[name=chk]:checkbox').length; i++) {
-      //   let $checkBox = $('input[name=chk]:checkbox')[i];
-      //   $checkBox.checked = true;
-      // }
+
+      // 체크한 제목 로그 찍기
+      $(".btn").click(function () {
+        $('.checkOne:checked').each(function () {
+          console.log($(this).parent().next().text());
+          //console.log($(this).closest("tr").children('.title').text());   // closest() - 부모 중 조건에 해당하는 가장 가까운 요소
+          //console.log($(this).parent().parent().children('td:eq(1)').text());
+          //console.log($(this).parents().children('td:eq(1)').text());
+        });
+      });
     });
   </script>
 </body>
+
 </html>
