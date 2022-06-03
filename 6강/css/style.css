@@ -40,6 +40,7 @@ body {
   animation: slide 3s linear infinite;
 }
 
+
 @keyframes slide {
   from {
     left: 0px;
