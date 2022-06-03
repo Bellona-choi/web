@@ -1,0 +1,28 @@
+.container {
+  border: 1px black solid;
+  height: 90vh;
+  position: relative;
+}
+
+#mario {
+  width: 200px;
+  position: absolute;
+  bottom: 0px;
+  left: 10px;
+}
+
+#goomba {
+  width: 100px;
+  position: absolute;
+  bottom: 20px;
+  right: 50px;
+}
+
+#killer {
+  width: 125px;
+  height: 70px;
+  position: absolute;
+  left: 140px;
+  bottom: 20px;
+  display: none;
+}
