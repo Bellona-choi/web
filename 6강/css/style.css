@@ -31,11 +31,31 @@ body {
   transform: scaleX(-1);
   display: none;
 }
+#gameover {
+  position: absolute;
+  width: 100%;
+  height: 600px;
+  background-color: black;
+  line-height: 200px;
+  text-align: center;
+  color: red;
+  font-size: large;
+}
 
+#start {
+  position: absolute;
+  width: 100%;
+  height: 600px;
+  background-color: black;
+  line-height: 200px;
+  text-align: center;
+  color: white;
+  font-size: large;
+}
 .background {
   position: absolute;
   background-image: url('../assets/bg.png');
-  width: 200%;
+  width: 250%;
   height: 100%;
   animation: slide 3s linear infinite;
 }
