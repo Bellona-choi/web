@@ -103,7 +103,7 @@
 
       // 발사
       isKillerStart = true;
-      $('#killer').show().animate({ left: '1000px' }, 1000, function () {
+      $('#killer').show().animate({ left: '3000px' }, 1000, function () {
         // 원래 자리로 이동
         killerInit();
         isKillerStart = false;
@@ -111,14 +111,14 @@
     }
 
     function killerInit() {
-      $('#killer').css('left', '220px').stop().hide();
+      $('#killer').css('left', '400px').stop().hide();
     }
 
     function goombaStart() {
-      let speed = getRandomInt(1000, 2000);   // 1~2초 사이
+      let speed = getRandomInt(3000, 5000);   // 1~2초 사이
       let respawnTime = getRandomInt(1000, 2000); // 1~2초 사이
 
-      $('#goomba').animate({ left: '-120px' }, speed, function () {
+      $('#goomba').animate({ left: '-100%' }, speed, function () {
         if (isGameOver == false) {
           score += 100;
           setScore(score);
@@ -137,7 +137,7 @@
     }
 
     function goombaInit() {
-      $('#goomba').css('right', '-150px').css('left', '').show();
+      $('#goomba').css('right', '-100%').css('left', '').show();
     }
 
     function jump() {
