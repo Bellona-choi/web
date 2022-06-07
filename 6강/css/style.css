@@ -15,6 +15,9 @@ body {
   bottom: 70px;
   left: 50px;
 }
+#score {
+  position: relative;
+} 
 
 #goomba {
   width: 100px;
