@@ -20,7 +20,7 @@ public class Word {
 		}
 		
 		public boolean isConsonant(int i) {
-			return !"aiueo".contains(letters.substring(i, i + 1));
+			return !isVowel(i);
 		}
 
 	}
