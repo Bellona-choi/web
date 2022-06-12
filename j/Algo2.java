@@ -7,15 +7,11 @@ import java.util.Scanner;
 public class Algo2 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-
         int a = scanner.nextInt();
         int b = scanner.nextInt();
         int R = scanner.nextInt();
-
         Gongsa gongsa = new Gongsa(a, b, R);
-
-        int N = scanner.nextInt();
-
+        int N = scanner.nextInt();s
         List<Tree> trees = new ArrayList<>();
         for (int i = 0; i < N; i++) {
             int x = scanner.nextInt();
@@ -23,19 +19,16 @@ public class Algo2 {
             Tree tree = new Tree(x, y);
             trees.add(tree);
         }
-
         Park park = new Park(gongsa, trees);
         for (boolean result : park.isSilents()) {
             System.out.println(result ? "silent" : "noisy");
         }
     }
 }
-
 class Gongsa {
     int x;
     int y;
     int radius;
-
     public Gongsa(int x, int y, int radius) {
         this.x = x;
         this.y = y;
